@@ -113,7 +113,7 @@ service:
 # Ingress settings
 ingress:
   # Enable ingress for home assistant
-  enabled: false
+  enabled: true
   # Enable external ingress (cannot be true when ingress.enabled is true)
   external: false
   className: ""
