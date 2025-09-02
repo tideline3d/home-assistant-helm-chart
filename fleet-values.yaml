@@ -3,7 +3,7 @@
 # Declare variables to be passed into your templates.
 
 # Number of replicas for the deployment
-replicaCount: 3
+replicaCount: 1
 
 # Image settings
 image:
@@ -113,7 +113,7 @@ service:
 # Ingress settings
 ingress:
   # Enable ingress for home assistant
-  enabled: true
+  enabled: false
   # Enable external ingress (cannot be true when ingress.enabled is true)
   external: false
   className: ""
@@ -290,11 +290,11 @@ configuration:
 # Persistence values for the Home Assistant instance
 persistence:
   # Enable or disable persistence
-  enabled: true
+  enabled: false
   # Access mode for the persistent volume claim
   accessMode: ReadWriteOnce
   # Size of the persistent volume claim
-  size: 50Gi
+  size: 5Gi
   # Storage class for the persistent volume claim
   storageClass: ""
   # Name of the existing volume for the StatefulSet, this option can be used to bind to an existing PV
@@ -409,7 +409,7 @@ addons:
     # Ingress settings for the code-server addon
     ingress:
       # Enable or disable the ingress for the code-server addon
-      enabled: false
+      enabled: true
       # Ingress class name
       className: ""
       # Ingress annotations
