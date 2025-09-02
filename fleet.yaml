@@ -3,4 +3,4 @@ helm:
   releaseName: home-assistant
   chart: charts/home-assistant
   values:
-    file: values.yaml
+    file: fleet-values.yaml
