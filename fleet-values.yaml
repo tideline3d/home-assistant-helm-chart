@@ -409,7 +409,7 @@ addons:
     # Ingress settings for the code-server addon
     ingress:
       # Enable or disable the ingress for the code-server addon
-      enabled: true
+      enabled: false
       # Ingress class name
       className: ""
       # Ingress annotations
