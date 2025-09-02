@@ -1,17 +1,6 @@
-apiVersion: fleet.cattle.io/v1alpha1
-kind: GitRepo
-metadata:
-  name: home-assistant
-  namespace: fleet-default
-spec:
-  repo: https://github.com/tideline3d/home-assistant-helm-chart.git
-  branch: main
-  paths:
-    - charts/home-assistant
-  targets:
-    - name: default
-      clusterSelector: {}
-      helm:
-        releaseName: home-assistant
-        valuesFiles:
-          - charts/home-assistant/values.yaml
+defaultNamespace: home-assistant
+helm:
+  releaseName: home-assistant
+  chart: charts/home-assistant
+  values:
+    file: values.yaml
