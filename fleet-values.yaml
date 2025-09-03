@@ -349,7 +349,7 @@ livenessProbe:
     path: /
     port: http
     scheme: HTTP
-  periodSeconds: 20
+  periodSeconds: 90
   successThreshold: 1
   timeoutSeconds: 2
 readinessProbe:
@@ -358,7 +358,7 @@ readinessProbe:
     path: /
     port: http
     scheme: HTTP
-  periodSeconds: 10
+  periodSeconds: 90
   successThreshold: 1
   timeoutSeconds: 1
 startupProbe: {}
