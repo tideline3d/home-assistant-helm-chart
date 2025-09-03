@@ -389,7 +389,7 @@ addons:
   # Code-server addon configuration
   codeserver:
     # Enable or disable the code-server addon
-    enabled: false
+    enabled: true
     # Resource settings for the code-server container
     resources: {}
     # Image settings for the code-server addon
@@ -418,7 +418,7 @@ addons:
       hosts:
         - host: chart-example.local
           paths:
-            - path: /
+            - path: /code-server
               pathType: ImplementationSpecific
       # Ingress TLS configuration
       tls: []
