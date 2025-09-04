@@ -2,5 +2,5 @@ defaultNamespace: home-assistant
 helm:
   releaseName: home-assistant
   repo: https://pajikos.github.io/home-assistant-helm-chart/
-  chart: pajikos/home-assistant
+  chart: home-assistant
   version: 0.3.18
