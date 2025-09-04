@@ -1,6 +1,2 @@
-defaultNamespace: home-assistant
 helm:
-  releaseName: home-assistant
   chart: ""
-  valuesFiles:
-     - fleet-values.yaml
