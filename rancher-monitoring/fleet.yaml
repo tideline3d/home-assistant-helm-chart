@@ -16,3 +16,5 @@ diff:
       name: rancher-monitoring-admission
       operations:
         - {"op":"remove", "path":"/webhooks/0/failurePolicy"}
+dependsOn:
+  - name: home-assistant-rancher-monitoring-crd
