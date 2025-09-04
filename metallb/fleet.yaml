@@ -1,6 +1,7 @@
 defaultNamespace: metallb-system
 helm:
   repo: https://metallb.github.io/metallb
+  releaseName: metallb
   chart: metallb
   version: 0.15.2
   valuesFiles:
