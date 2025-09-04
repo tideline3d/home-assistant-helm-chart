@@ -104,9 +104,9 @@ dnsConfig: {}
 # Service settings
 service:
   # Service type (ClusterIP, NodePort, LoadBalancer, or ExternalName)
-  type: ClusterIP
+  type: LoadBalancer
   # Service port
-  port: 8080
+  port: 80
   # Annotations to add to the service
   annotations: {}
 
