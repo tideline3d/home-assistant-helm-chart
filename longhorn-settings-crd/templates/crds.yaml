@@ -15,18 +15,26 @@ kind: Setting
 metadata:
   name: default-data-locality
   namespace: longhorn-system
-value: 'best-effort'
+value: best-effort
 ---
 apiVersion: longhorn.io/v1beta2
 kind: Setting
 metadata:
   name: auto-delete-pod-when-volume-detached-unexpectedly
   namespace: longhorn-system
-value: 'true'
+value: true
 ---
 apiVersion: longhorn.io/v1beta2
 kind: Setting
 metadata:
   name: detach-manually-attached-volumes-when-cordoned
   namespace: longhorn-system
-value: 'true'
+value: true
+---
+apiVersion: longhorn.io/v1beta2
+kind: Setting
+metadata:
+  name: node-down-pod-deletion-policy
+  namespace: longhorn-system
+value: delete-both-statefulset-and-deployment-pod
+
