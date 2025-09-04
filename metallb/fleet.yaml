@@ -4,5 +4,14 @@ helm:
   releaseName: metallb
   chart: metallb
   version: 0.15.2
-  valuesFiles:
-     - values.yaml
+targetCustomizations:
+  - apiVersion: metallb.io/v1beta1
+    kind: IPAddressPool
+    name: home-ha-pool
+    spec:
+      addresses:
+        - 10.42.12.10-10.42.12.12
+  - apiVersion: metallb.io/v1beta1
+    kind: L2Advertisement
+    name: home-ha-l2
+    namespace: metallb-system
