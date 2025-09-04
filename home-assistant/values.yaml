@@ -3,7 +3,7 @@
 # Declare variables to be passed into your templates.
 
 # Number of replicas for the deployment
-replicaCount: 1
+replicaCount: 2
 
 # Image settings
 image:
