@@ -7,5 +7,5 @@ helm:
   valuesFiles:
      - values.yaml
 dependsOn:
-  - name: home-assistant-longhorn
-  - name: home-assistant-metallb
+  - name: wedgefield-longhorn
+  - name: wedgefield-metallb
