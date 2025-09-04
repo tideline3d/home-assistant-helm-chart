@@ -1,5 +1,0 @@
-defaultNamespace: longhorn-system
-helm:
-  releaseName: longhorn-settings-crd
-  chart: ""
-  version: 0.0.0
