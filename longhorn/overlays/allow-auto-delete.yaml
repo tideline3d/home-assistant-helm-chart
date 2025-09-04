@@ -1,0 +1,11 @@
+# This is to facilitate automatic deletion of Longhorn volumes when destroying clusters
+# WARNING: This setting will remove all Longhorn volumes without confirmation.
+
+# This should be set to false once ready for production volume storage.
+
+apiVersion: longhorn.io/v1beta2
+kind: Setting
+metadata:
+  name: deleting-confirmation-flag
+  namespace: longhorn-system
+value: 'true'
