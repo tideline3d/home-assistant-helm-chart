@@ -15,7 +15,7 @@ kind: Setting
 metadata:
   name: default-data-locality
   namespace: longhorn-system
-value: best-effort
+value: 'best-effort'
 ---
 apiVersion: longhorn.io/v1beta2
 kind: Setting
@@ -36,5 +36,5 @@ kind: Setting
 metadata:
   name: node-down-pod-deletion-policy
   namespace: longhorn-system
-value: delete-both-statefulset-and-deployment-pod
+value: 'delete-both-statefulset-and-deployment-pod'
 
