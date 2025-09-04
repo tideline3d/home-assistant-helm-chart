@@ -21,3 +21,5 @@ diff:
     name: volumes.longhorn.io
     operations:
     - {"op": "replace", "path": "/status"}
+  dependsOn:
+  - name: wedgefield-longhorn-settings-crd
