@@ -1,0 +1,17 @@
+# values.yaml
+# Longhorn custom configuration values
+
+# Pod scheduling knobs for the manager (example toleration shown; remove if not needed)
+longhornManager:
+  tolerations:
+    - key: "node-role.kubernetes.io/control-plane"
+      operator: "Exists"
+      effect: "NoSchedule"
+
+# Cluster-wide Longhorn settings (applied post-install by the chart’s job)
+defaultSettings:
+  deletingConfirmationFlag: true
+  defaultDataLocality: best-effort
+  autoDeletePodWhenVolumeDetachedUnexpectedly: true
+  detachManuallyAttachedVolumesWhenCordoned: true
+  nodeDownPodDeletionPolicy: delete-both-statefulset-and-deployment-pod
