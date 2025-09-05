@@ -9,3 +9,5 @@ helm:
 dependsOn:
   - name: wedgefield-longhorn
   - name: wedgefield-metallb-config
+kustomize:
+  dir: .
