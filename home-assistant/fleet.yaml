@@ -8,4 +8,4 @@ helm:
      - values.yaml
 dependsOn:
   - name: wedgefield-longhorn
-  - name: wedgefield-metallb
+  - name: wedgefield-metallb-config
