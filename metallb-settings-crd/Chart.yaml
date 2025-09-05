@@ -1,5 +1,0 @@
-apiVersion: v2
-description: MetalLB CustomResourceDefinitions
-icon: https://charts.rancher.io/assets/logos/fleet.svg
-name: metallb-settings-crd
-version: 0.0.1
