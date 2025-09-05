@@ -1,0 +1,14 @@
+apiVersion: metallb.io/v1beta1
+kind: IPAddressPool
+metadata:
+  name: wedgefield-metallb-ip-pool
+  namespace: metallb-system
+spec:
+  addresses:
+    - 10.42.12.10-10.42.12.12
+---
+apiVersion: metallb.io/v1beta1
+kind: L2Advertisement
+metadata:
+  name: wedgefield-metallb-l2
+  namespace: metallb-system
