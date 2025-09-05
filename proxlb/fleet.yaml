@@ -1,0 +1,6 @@
+defaultNamespace: proxlb-system
+helm:
+  releaseName: proxlb
+  chart: ./
+  valuesFiles:
+    - values.yaml
