@@ -23,7 +23,8 @@ configmap:
   config:
     proxmox_api:
       hosts: [10.42.1.91,10.42.1.92]
-      token_id: "root@pam!proxylb"
+      user: "root@pam"
+      token_id: "proxylb"
       token_secret: "e009c8a9-39f1-49d4-b042-5f3d082cdac3"
       ssl_verification: false
       timeout: 10
