@@ -22,7 +22,7 @@ configmap:
   create: true
   config:
     proxmox_api:
-      hosts: [10.42.1.91,10.42.1.92]
+      hosts: [10.42.1.91,10.42.1.92,10.42.1.93]
       user: "root@pam"
       token_id: "proxylb"
       token_secret: "e009c8a9-39f1-49d4-b042-5f3d082cdac3"
