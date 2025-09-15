@@ -8,7 +8,7 @@ spec:
   replicas: 1 # Number of replicas cannot be more than 1
   selector:
     matchLabels:
-      {{- include "proxlb.labels" . | nindent 6 }}
+      {{- include "proxlb.selectorLabels" . | nindent 6 }}
   template:
     metadata:
       labels:

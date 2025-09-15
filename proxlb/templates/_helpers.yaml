@@ -2,11 +2,21 @@
 {{- printf "%s-%s" .Release.Name .Chart.Name | trunc 63 | trimSuffix "-" -}}
 {{- end -}}
 
-{{ define "proxlb.labels" }}
+{{/*
+Selector labels - these are stable and used for deployment selector
+*/}}
+{{ define "proxlb.selectorLabels" }}
 app.kubernetes.io/name: {{ .Release.Name }}
+app.kubernetes.io/component: proxlb
+{{ end }}
+
+{{/*
+Common labels - includes all labels including version
+*/}}
+{{ define "proxlb.labels" }}
+{{ include "proxlb.selectorLabels" . }}
 app.kubernetes.io/managed-by: Helm
 app.kubernetes.io/version: {{ .Chart.AppVersion }}
-app.kubernetes.io/component: proxlb
 {{- if .Values.labels }}
 {{ toYaml .Values.labels }}
 {{- end }}
