@@ -49,7 +49,7 @@ configmap:
     service:
       daemon: True
       schedule:
-        interval: 12
+        interval: 1
         format: "hours"
       delay:
         enable: False
