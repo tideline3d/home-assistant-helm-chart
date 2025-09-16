@@ -107,7 +107,9 @@ volumeMounts: []
 #   readOnly: true
 
 # -- Selector to control on which node the pods should be running
-nodeSelector: {}
+nodeSelector: {
+  jcwright.net/iot-network-access: "true"
+  }
 
 tolerations: []
 
