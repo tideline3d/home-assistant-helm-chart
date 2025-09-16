@@ -3,3 +3,7 @@ kind: L2Advertisement
 metadata:
   name: wedgefield-metallb-l2
   namespace: metallb-system
+spec:
+  nodeSelectors:
+  - matchLabels:
+      metallb-speaker: "true"
