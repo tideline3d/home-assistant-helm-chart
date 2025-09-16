@@ -3,7 +3,7 @@ helm:
   releaseName: matter
   repo: https://github.com/wittdennis/charts/tree/62c91a7a71ac24afd5ea7768067f8505a650a6f4/
   chart: home-assistant-matter-server
-  version: 0.3.18
+  version: 3.0.1
   valuesFiles:
      - values.yaml
 dependsOn:
