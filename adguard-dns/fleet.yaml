@@ -1,0 +1,6 @@
+defaultNamespace: adguard-dns
+helm:
+  releaseName: adguard-dns
+  chart: ./
+  valuesFiles:
+    - values.yaml
