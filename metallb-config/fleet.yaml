@@ -1,7 +1,0 @@
-defaultNamespace: metallb-system
-helm:
-  releaseName: metallb-settings-crd
-dependsOn:
-  - name: wedgefield-metallb
-kustomize:
-  dir: .

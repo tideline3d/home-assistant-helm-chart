@@ -4,3 +4,5 @@ helm:
   releaseName: metallb
   chart: metallb
   version: 0.15.2
+kustomize:
+  dir: .
