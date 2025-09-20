@@ -1,7 +1,7 @@
 apiVersion: metallb.io/v1beta1
 kind: L2Advertisement
 metadata:
-  name: wedgefield-metallb-l2
+  name: 4912-metallb-l2
   namespace: metallb-system
 # If you want to restrict speakers to specific nodes, uncomment the spec section below 
 #spec:

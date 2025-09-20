@@ -1,0 +1,7 @@
+defaultNamespace: metallb-system
+helm:
+  releaseName: metallb-settings-crd
+dependsOn:
+  - name: loadbalancer-metallb
+kustomize:
+  dir: .
