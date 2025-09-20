@@ -90,18 +90,22 @@ spec:
               containerPort: 784
               protocol: UDP
           livenessProbe:
-            httpGet:
-              path: /
-              port: http
+            exec:
+              command:
+                - nslookup
+                - google.com
+                - 127.0.0.1
             initialDelaySeconds: 30
             periodSeconds: 30
             timeoutSeconds: 5
             failureThreshold: 3
           readinessProbe:
-            httpGet:
-              path: /
-              port: http
-            initialDelaySeconds: 5
+            exec:
+              command:
+                - nslookup
+                - google.com
+                - 127.0.0.1
+            initialDelaySeconds: 10
             periodSeconds: 10
             timeoutSeconds: 3
             failureThreshold: 3
