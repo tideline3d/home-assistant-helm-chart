@@ -48,6 +48,8 @@ service:
     type: LoadBalancer
     externalTrafficPolicy: Local
     loadBalancerIP: "10.42.12.12"
+    annotations:
+      metallb.universe.tf/allow-shared-ip: adguard-home
     ports:
       tcp:
         enabled: true
@@ -122,7 +124,7 @@ env:
 # [[ref]](https://github.com/AdguardTeam/AdGuardHome/wiki/Configuration)
 config:
   bind_host: 0.0.0.0
-  bind_port: 80
+  bind_port: 3000
   users: []
   auth_attempts: 5
   block_auth_min: 15
