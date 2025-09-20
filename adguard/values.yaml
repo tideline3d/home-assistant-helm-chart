@@ -47,7 +47,7 @@ service:
     enabled: true
     type: LoadBalancer
     externalTrafficPolicy: Local
-    loadBalancerIP: ""
+    loadBalancerIP: "10.42.12.12"
     annotations:
       metallb.universe.tf/allow-shared-ip: adguard-home
     ports:
