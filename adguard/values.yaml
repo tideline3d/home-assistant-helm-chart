@@ -95,14 +95,14 @@ resources: {}
 # Persistence configuration
 persistence:
   config:
-    enabled: true
+    enabled: false
     retain: true
     accessMode: ReadWriteOnce
     size: 1Gi
     # storageClass: ""
     annotations: {}
   data:
-    enabled: true
+    enabled: false
     retain: true
     accessMode: ReadWriteOnce
     size: 4Gi
