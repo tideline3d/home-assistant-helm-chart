@@ -1,16 +1,16 @@
 apiVersion: apps/v1
-kind: StatefulSet
+kind: Deployment
 metadata:
   name: {{ include "adguard-home.fullname" . }}
   labels:
     {{- include "adguard-home.labels" . | nindent 4 }}
 spec:
   replicas: {{ .Values.replicaCount }}
-  serviceName: {{ include "adguard-home.fullname" . }}
-  updateStrategy:
+  strategy:
     type: RollingUpdate
     rollingUpdate:
       maxUnavailable: 1
+      maxSurge: 1
   selector:
     matchLabels:
       {{- include "adguard-home.selectorLabels" . | nindent 6 }}
@@ -131,6 +131,16 @@ spec:
           configMap:
             name: {{ include "adguard-home.configMapName" . }}
         {{- end }}
+        {{- if .Values.persistence.config.enabled }}
+        - name: config
+          persistentVolumeClaim:
+            claimName: {{ include "adguard-home.fullname" . }}-config
+        {{- end }}
+        {{- if .Values.persistence.data.enabled }}
+        - name: data
+          persistentVolumeClaim:
+            claimName: {{ include "adguard-home.fullname" . }}-data
+        {{- end }}
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
@@ -168,52 +178,3 @@ spec:
               topologyKey: kubernetes.io/hostname
           {{- end }}
       {{- end }}
-  volumeClaimTemplates:
-  {{- if .Values.persistence.config.enabled }}
-  - metadata:
-      name: config
-      labels:
-        {{- include "adguard-home.labels" . | nindent 8 }}
-        pvc.type: config
-      {{- with .Values.persistence.config.annotations }}
-      annotations:
-        {{- toYaml . | nindent 8 }}
-      {{- end }}
-    spec:
-      accessModes:
-        - {{ .Values.persistence.config.accessMode | default "ReadWriteOnce" }}
-      resources:
-        requests:
-          storage: {{ .Values.persistence.config.size | default "1Gi" }}
-      {{- if .Values.persistence.config.storageClass }}
-      {{- if (eq "-" .Values.persistence.config.storageClass) }}
-      storageClassName: ""
-      {{- else }}
-      storageClassName: {{ .Values.persistence.config.storageClass }}
-      {{- end }}
-      {{- end }}
-  {{- end }}
-  {{- if .Values.persistence.data.enabled }}
-  - metadata:
-      name: data
-      labels:
-        {{- include "adguard-home.labels" . | nindent 8 }}
-        pvc.type: data
-      {{- with .Values.persistence.data.annotations }}
-      annotations:
-        {{- toYaml . | nindent 8 }}
-      {{- end }}
-    spec:
-      accessModes:
-        - {{ .Values.persistence.data.accessMode | default "ReadWriteOnce" }}
-      resources:
-        requests:
-          storage: {{ .Values.persistence.data.size | default "4Gi" }}
-      {{- if .Values.persistence.data.storageClass }}
-      {{- if (eq "-" .Values.persistence.data.storageClass) }}
-      storageClassName: ""
-      {{- else }}
-      storageClassName: {{ .Values.persistence.data.storageClass }}
-      {{- end }}
-      {{- end }}
-  {{- end }}

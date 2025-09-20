@@ -2,7 +2,7 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-replicaCount: 3
+replicaCount: 1
 
 image:
   repository: adguard/adguardhome
@@ -35,7 +35,7 @@ securityContext: {}
 
 # Pod anti-affinity configuration
 podAntiAffinity:
-  enabled: true
+  enabled: false
   preferredDuringSchedulingIgnoredDuringExecution: true
 
 service:
@@ -99,14 +99,14 @@ persistence:
     retain: true
     accessMode: ReadWriteOnce
     size: 1Gi
-    # storageClass: ""
+    storageClass: "longhorn"
     annotations: {}
   data:
     enabled: true
     retain: true
     accessMode: ReadWriteOnce
     size: 4Gi
-    # storageClass: ""
+    storageClass: "longhorn"
     annotations: {}
 
 nodeSelector: {}
