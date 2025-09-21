@@ -41,7 +41,7 @@ podAntiAffinity:
 service:
   main:
     type: ClusterIP
-    port: 3000
+    port: 80
     annotations: {}
   dns:
     enabled: true
@@ -125,7 +125,7 @@ env:
 # [[ref]](https://github.com/AdguardTeam/AdGuardHome/wiki/Configuration)
 config:
   bind_host: 0.0.0.0
-  bind_port: 3000
+  bind_port: 80
   users: []
   auth_attempts: 5
   block_auth_min: 15
