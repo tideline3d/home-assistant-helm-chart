@@ -1,7 +1,6 @@
 defaultNamespace: adguard-dns
 helm:
   releaseName: adguard-dns
-  repo: https://github.com/tideline3d/adguard-chart-source.git//charts/adguard-home
-  chart: .
+  chart: git::https://github.com/tideline3d/adguard-chart-source.git//charts/adguard-home
   valuesFiles:
     - values.yaml
