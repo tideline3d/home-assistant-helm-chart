@@ -89,7 +89,7 @@ services:
     # -- Set traffic policy for external traffic. Set to "Local" to preserve client ip address in case of service type "LoadBalancer" or "NodePort"
     externalTrafficPolicy: "Local"
     # -- Load balancer IP for DNS (when applicable)
-    loadBalancerIP: 10.42.12.12
+    loadBalancerIP: 10.42.12.53
     tcp:
       port: 53
     udp:
