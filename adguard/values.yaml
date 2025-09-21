@@ -40,9 +40,15 @@ podAntiAffinity:
 
 service:
   main:
-    type: ClusterIP
-    port: 3000
-    annotations: {}
+    type: LoadBalancer
+    externalTrafficPolicy: Local
+    loadBalancerIP: "10.42.12.12"
+    annotations:
+      metallb.universe.tf/allow-shared-ip: adguard-home
+    ports:
+      tcp:
+        enabled: true
+        port: 3000
   dns:
     enabled: true
     type: LoadBalancer
