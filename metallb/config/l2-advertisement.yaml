@@ -3,8 +3,8 @@ kind: L2Advertisement
 metadata:
   name: 4912-metallb-l2
   namespace: metallb-system
-# If you want to restrict speakers to specific nodes, uncomment the spec section below 
-# spec:
-#   nodeSelectors:
-#   - matchLabels:
-#       metallb-speaker: "true"
+spec:
+  # Restrict speakers to nodes with specific network label
+  nodeSelectors:
+  - matchLabels:
+      jcwright.net/vlan: "12"  # Replace with your VLAN ID
