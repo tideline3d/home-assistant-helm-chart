@@ -41,7 +41,7 @@ podAntiAffinity:
 service:
   main:
     type: ClusterIP
-    port: 3000
+    port: 80
     annotations: {}
   dns:
     enabled: true
@@ -57,12 +57,6 @@ service:
       udp:
         enabled: true
         port: 53
-      tls:
-        enabled: true
-        port: 853
-      quic:
-        enabled: true
-        port: 784
 
 ingress:
   enabled: true
