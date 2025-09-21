@@ -4,7 +4,7 @@ metadata:
   name: 4912-metallb-l2
   namespace: metallb-system
 # If you want to restrict speakers to specific nodes, uncomment the spec section below 
-spec:
-  nodeSelectors:
-  - matchLabels:
-      metallb-speaker: "true"
+# spec:
+#   nodeSelectors:
+#   - matchLabels:
+#       metallb-speaker: "true"
